@@ -9,10 +9,7 @@ Node.js to środowisko uruchomieniowe dla JavaScriptu poza przeglądarką.
 Działa na silniku V8 i obsługuje model event-driven oraz non-blocking I/O.
 
 Przykład prostego serwera w Node.js:
-
-javascript
-Kopiuj
-Edytuj
+----------------------------------------------------
 const http = require("http");
 
 const server = http.createServer((req, res) => {
@@ -23,15 +20,16 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
     console.log("Serwer działa na http://localhost:3000");
 });
+----------------------------------------------------
+
 3. Popularne frameworki backendowe
 Najpopularniejsze frameworki backendowe dla Node.js to:
+- Express.js – lekki i elastyczny framework do budowy API
+- NestJS – oparty na TypeScript, strukturalny framework dla dużych aplikacji
+- Fastify – szybka alternatywa dla Express.js
 
-Express.js – lekki i elastyczny framework do budowy API
-NestJS – oparty na TypeScript, strukturalny framework dla dużych aplikacji
-Fastify – szybka alternatywa dla Express.js
 Przykładowy backend w Express.js:
-
-
+----------------------------------------------------
 const express = require("express");
 const app = express();
 
@@ -40,14 +38,17 @@ app.get("/", (req, res) => {
 });
 
 app.listen(3000, () => console.log("Serwer działa na porcie 3000"));
+----------------------------------------------------
 
 4. JavaScript vs inne technologie backendowe
 Node.js ma wiele zalet, ale warto porównać go z innymi popularnymi technologiami backendowymi:
 
-Cecha	Node.js	Python	PHP
-Wydajność	Wysoka	Średnia	Średnia
-Ekosystem	Bardzo duży	Duży	Duży
-Zastosowania	API, mikroserwisy, aplikacje real-time	AI, ML, analityka	Strony WWW, CMS
+| Cecha        | Node.js       | Python        | PHP           |
+|--------------|---------------|---------------|---------------|
+| Wydajność    | Wysoka        | Średnia       | Średnia       |
+| Ekosystem    | Bardzo duży   | Duży          | Duży          |
+| Zastosowania | API, mikroserwisy, aplikacje real-time | AI, ML, analityka | Strony WWW, CMS |
+
 5. Kiedy warto używać backendowego JavaScriptu?
 JavaScript na backendzie sprawdza się w:
 ✅ Aplikacjach w czasie rzeczywistym (czaty, streaming)
@@ -59,6 +60,10 @@ Nie jest najlepszym wyborem dla:
 ❌ Aplikacji wymagających dużej precyzji w obliczeniach numerycznych
 
 6. Podsumowanie
+JavaScript to potężne narzędzie backendowe dzięki Node.js.
+Jest szybki, wydajny i ma duży ekosystem, ale nie zawsze jest najlepszym wyborem.
+
+Masz doświadczenie z backendowym JavaScript? Podziel się swoimi opiniami!
 JavaScript to potężne narzędzie backendowe dzięki Node.js.
 Jest szybki, wydajny i ma duży ekosystem, ale nie zawsze jest najlepszym wyborem.
 
