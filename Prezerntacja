@@ -1,0 +1,101 @@
+Tytuł:
+JavaScript jako technologia Back-end
+Podtytuł:
+Rola JavaScript w tworzeniu aplikacji Back-end: Ewolucja, Node.js i jego popularność
+Treść:
+JavaScript to język, który początkowo był używany tylko po stronie klienta, jednak dzięki rozwojowi środowiska Node.js, zaczęto wykorzystywać go także do tworzenia aplikacji serwerowych. Z perspektywy dewelopera, korzystanie z tego samego języka w obydwu częściach aplikacji (front-end i back-end) pozwala na spójność i łatwiejsze zarządzanie projektem.
+Tytuł:
+Wprowadzenie do JavaScript w Back-endzie
+Treść:
+JavaScript początkowo był zaprojektowany jako język skryptowy do interakcji z użytkownikami w przeglądarkach internetowych. Z czasem jednak jego zastosowanie zaczęło się rozszerzać, a dziś jest wykorzystywany w środowiskach serwerowych za pomocą platformy Node.js. Technologia ta zyskała popularność, ponieważ pozwala na tworzenie aplikacji serwerowych, które są szybkie, skalowalne i mogą obsługiwać dużą liczbę zapytań w tym samym czasie.
+Korzyści:
+•	Spójność językowa – front-end i back-end w tym samym języku.
+•	Wysoka wydajność, zwłaszcza w aplikacjach wymagających obsługi dużej liczby jednoczesnych zapytań.
+Node.js
+Tytuł:
+Node.js – Serce JavaScript w Back-endzie
+Treść:
+Node.js to środowisko uruchomieniowe dla JavaScriptu, które umożliwia uruchamianie kodu poza przeglądarką. Jest oparte na silniku V8 (Google Chrome), co zapewnia szybkie wykonywanie skryptów. Node.js wykorzystuje model zdarzeniowy oraz I/O oparte na nieblokujących operacjach (non-blocking), co sprawia, że idealnie nadaje się do aplikacji wymagających wysokiej wydajności przy równoczesnym przetwarzaniu wielu zapytań.
+Cechy Node.js:
+•	Event-driven: Zdarzenia wyzwalają funkcje, które wykonują operacje w odpowiedzi na zapytania użytkownika.
+•	Non-blocking I/O: Operacje wejścia/wyjścia (np. zapisywanie danych w bazie) nie blokują aplikacji, co pozwala na jednoczesną obsługę wielu zapytań.
+•	Asynchroniczność: Node.js obsługuje operacje asynchronicznie, dzięki czemu aplikacje są bardziej responsywne i skalowalne.
+Przykład kodu (hello world w Node.js):
+javascript
+KopiujEdytuj
+const http = require('http');
+http.createServer((req, res) => {
+  res.write('Hello World');
+  res.end();
+}).listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+
+Tytuł:
+Frameworki w Node.js – Przyspieszenie pracy z aplikacjami Back-end
+Treść:
+Node.js wspiera wiele frameworków, które znacząco przyspieszają proces tworzenia aplikacji. Każdy z tych frameworków ma swoje unikalne cechy, które pasują do różnych typów aplikacji.
+•	Express.js: Minimalistyczny i elastyczny framework, który pozwala na szybkie tworzenie aplikacji i API. Jest najczęściej używany w projektach, gdzie liczy się szybkość prototypowania.
+Przykład Express.js:
+javascript
+KopiujEdytuj
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello Express!');
+});
+
+app.listen(3000, () => {
+  console.log('Server running on http://localhost:3000');
+});
+•	NestJS: Framework oparty na TypeScript, który wprowadza bardziej rozbudowaną strukturę do aplikacji, idealny dla dużych projektów i aplikacji mikroserwisowych. Zapewnia wiele wbudowanych narzędzi, takich jak obsługa routingów, logowanie, walidacja danych itp.
+•	Koa.js: Stworzony przez twórców Express.js, ale z bardziej minimalistycznym podejściem i lepszą obsługą nowoczesnych technologii, takich jak async/await.
+Tytuł:
+Architektura aplikacji w Node.js – Event-driven i Asynchroniczność
+Treść:
+Aplikacje oparte na Node.js korzystają z event-driven architecture oraz non-blocking I/O, co pozwala na bardzo wydajne zarządzanie dużą liczbą zapytań bez blokowania zasobów. Node.js jest idealnym rozwiązaniem do budowania aplikacji w czasie rzeczywistym, takich jak chattów czy gier online.
+Zalety takiej architektury:
+•	Wydajność: Nieblokujące operacje I/O pozwalają na równoczesną obsługę wielu zapytań.
+•	Skalowalność: Aplikacje mogą skalować się łatwiej niż w tradycyjnych środowiskach opartych na wielu wątkach.
+Przykład kodu obsługującego wiele zapytań jednocześnie (Node.js + Express):
+javascript
+KopiujEdytuj
+app.get('/data', (req, res) => {
+  setTimeout(() => {
+    res.send('Data received');
+  }, 1000); // Symulacja opóźnienia
+});
+Ta aplikacja może jednocześnie obsługiwać wiele zapytań, nie blokując głównego wątku.
+Przykłady zastosowania JavaScript w Back-endzie
+Tytuł:
+Zastosowania JavaScript w Back-endzie
+Treść:
+JavaScript w połączeniu z Node.js jest używany w wielu dziedzinach. Jego możliwości obejmują tworzenie aplikacji w czasie rzeczywistym, API oraz mikroserwisów.
+Przykłady zastosowań:
+•	Aplikacje webowe: Tworzenie dynamicznych aplikacji internetowych, które obsługują tysiące zapytań w czasie rzeczywistym.
+•	API (RESTful, GraphQL): Node.js jest wykorzystywany do tworzenia API, które służą do komunikacji między różnymi aplikacjami.
+•	Mikroserwisy: Aplikacje oparte na mikroserwisach są bardziej elastyczne i łatwiejsze do zarządzania. Node.js sprawdza się w tym przypadku, zapewniając łatwą komunikację między różnymi komponentami aplikacji.
+Tytuł:
+Zalety korzystania z JavaScript w Back-endzie
+Treść:
+Node.js i JavaScript oferują liczne korzyści, które sprawiają, że są popularnym wyborem dla programistów tworzących aplikacje Back-endowe.
+•	Wysoka wydajność: Dzięki non-blocking I/O i event-driven, Node.js obsługuje duże ilości zapytań, co czyni go idealnym do aplikacji wymagających dużej liczby operacji wejścia/wyjścia.
+•	Jednolitość języka: Programiści mogą używać tego samego języka na froncie i back-endzie, co zmniejsza krzywą uczenia się i umożliwia łatwiejszą współpracę między zespołami.
+•	Modularność: Dzięki dużej liczbie dostępnych bibliotek (npm), programiści mogą łatwo integrować nowe funkcje i rozszerzenia w swoich aplikacjach.
+Tytuł:
+Wady korzystania z JavaScript w Back-endzie
+Treść:
+Mimo licznych zalet, Node.js nie jest idealnym rozwiązaniem dla każdej aplikacji. Ma także swoje ograniczenia i wyzwania.
+•	Asynchroniczność: Złożoność zarządzania asynchronicznością, szczególnie przy dużych aplikacjach, może prowadzić do problemów z zarządzaniem kodem i debugowaniem.
+•	Brak wątków: Node.js działa w jednym wątku, co oznacza, że nie jest idealny do aplikacji wymagających dużego przetwarzania CPU, np. intensywnych obliczeń matematycznych.
+Podsumowanie: JavaScript w Back-endzie, zwłaszcza dzięki Node.js, jest jednym z najpotężniejszych narzędzi do tworzenia aplikacji webowych. Połączenie wydajności, asynchronicznego przetwarzania danych oraz ogromnej biblioteki narzędzi sprawia, że jest to język, który można używać do budowy skalowalnych, elastycznych aplikacji. Choć Node.js nie jest idealnym rozwiązaniem dla każdej aplikacji (np. w przypadku intensywnych obliczeń CPU), to jego zalety sprawiają, że jest to jedna z najczęściej wybieranych technologii w nowoczesnym tworzeniu aplikacji Back-endowych. Jego przyszłość wydaje się być jasna, a jego wszechstronność daje ogromne możliwości w różnych branżach.
+
+Tytuł:
+Źródła
+Treść:
+•	Node.js Documentation
+•	Express.js
+•	NestJS
+•	MDN JavaScript Promise
+
