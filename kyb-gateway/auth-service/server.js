@@ -3,6 +3,7 @@ const mongoose = require('mongoose'); // For connecting to MongoDB
 const dotenv = require('dotenv'); // To read values from .env
 const registerRoute = require('./routes/register'); // Import registration route
 const loginRoute = require('./routes/login'); // Import login route
+const resetPasswordRoute = require('./routes/reset-password'); // Import reset password route
 
 dotenv.config(); // Load .env file variables
 const app = express(); // Create Express app
@@ -16,6 +17,7 @@ mongoose.connect(process.env.MONGO_URI)
 // Set up API routes
 app.use('/api/register', registerRoute);
 app.use('/api/login', loginRoute);
+app.use('/api/reset-password', resetPasswordRoute);
 
 // Start the server
 const PORT = process.env.PORT || 5000;

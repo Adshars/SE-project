@@ -8,6 +8,6 @@ const UserSchema = new mongoose.Schema({
 });
 
 // Export User model
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.models.User || mongoose.model('User', UserSchema);
 // This model will be used to interact with the users collection in MongoDB
 // and perform CRUD operations on user data.
