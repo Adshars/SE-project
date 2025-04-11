@@ -2,5 +2,6 @@
 Co to będzie robić:
 ✅ Rejestracja użytkownika
 ✅ Logowanie użytkownika
+✅ Resetowanie hasła
 ✅ Zwracanie tokenu JWT po zalogowaniu
 
