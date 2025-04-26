@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import register from './routes/register.js';
 import login from './routes/login.js';
 import resetPassword from './routes/reset-password.js';
+import { verifyToken } from './middleware/authMiddleware.js';
 
 dotenv.config();
 const app = express();
