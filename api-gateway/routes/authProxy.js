@@ -1,12 +1,14 @@
 import express from 'express';
 import axios from 'axios';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const router = express.Router();
 
 // Endpoint do logowania
 router.post('/login', async (req, res) => {
   try {
-    const response = await axios.post('http://localhost:4000/login', {
+    const response = await axios.post(`${process.env.AUTH_SERVICE_URL}/login`, {
       email: req.body.email,
       password: req.body.password,
     });
