@@ -1,7 +1,7 @@
 import os
 
 # Ścieżki
-input_file = os.path.join('Opensanctions', 'pl_mswia_sanctions', 'targets.nested.json')
+input_file = os.path.join('Data','Opensanctions', 'pl_mswia_sanctions', 'targets.nested.json')
 output_dir = os.path.join('Data', 'Fixed')
 output_file = os.path.join(output_dir, 'targets_fixed.json')
 
