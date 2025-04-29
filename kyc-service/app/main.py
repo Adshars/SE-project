@@ -1,20 +1,30 @@
-from fastapi import FastAPI, HTTPException, Header, Request
-from app.sanctions_checker import check_person
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from app.sanctions_checker import search_person
 
 app = FastAPI()
 
-@app.post("/check")
-async def check(request: Request):
-    data = await request.json()
-    name = data.get("name")
-    dob = data.get("dob")
+class PersonQuery(BaseModel):
+    first_name: str
+    last_name: str
+    birth_date: str | None = None
 
-    if not name:
-        raise HTTPException(status_code=400, detail="Name is required")
+@app.post("/search")
+def check_sanctions(person: PersonQuery):
+    """
+    Endpoint do sprawdzania sankcji dla danej osoby.
+    """
+    maches = search_person(querty.first_name, querty.last_name, querty.birth_date)
 
-    result = check_person(name, dob)
-
-    if result:
-        return {"match": True, "details": result}
+    if maches:
+        return {
+            "found": True,
+            "count": len(maches),
+            "results": maches
+        }
     else:
-        raise HTTPException(status_code=404, detail="Person not found")
+        return {
+            "found": False,
+            "count": 0,
+            "results": []
+        }
