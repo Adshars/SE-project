@@ -5,8 +5,12 @@ import os
 DATA_FILE = os.path.join('Data', 'Fixed', 'targets_fixed.json')
 
 #Załadowanie danych z pliku JSON
-with open(DATA_FILE, 'r', encoding='utf-8') as f:
-    data = json.load(f)
+try:
+    with open(DATA_FILE, 'r', encoding='utf-8') as f:
+        DATA = json.load(f)
+except Exception as e:
+    print(f"❌ Błąd ładowania danych z {DATA_FILE}: {e}")
+    DATA = []
 
 def search_person(first_name: str, last_name: str, birth_date: str = None):
     """

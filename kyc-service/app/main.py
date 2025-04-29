@@ -10,17 +10,17 @@ class PersonQuery(BaseModel):
     birth_date: str | None = None
 
 @app.post("/search")
-def check_sanctions(person: PersonQuery):
+def check_sanctions(query: PersonQuery):
     """
     Endpoint do sprawdzania sankcji dla danej osoby.
     """
-    maches = search_person(querty.first_name, querty.last_name, querty.birth_date)
+    matches = search_person(query.first_name, query.last_name, query.birth_date)
 
-    if maches:
+    if matches:
         return {
             "found": True,
-            "count": len(maches),
-            "results": maches
+            "count": len(matches),
+            "results": matches
         }
     else:
         return {
