@@ -19,7 +19,7 @@ app.post('/search', verifyToken, async (req, res) => {
     const response = await axios.post('http://kyc-service:8000/search', req.body);
       res.json(response.data);
     } catch (error) {
-      console.error('[API-GATEWAY] Błąd komunikacji z kyc-service:', err.message);
+      console.error('[API-GATEWAY] Błąd komunikacji z kyc-service:', error.message);
       res.status(500).json({ error: 'Internal server error' });
     }
 });

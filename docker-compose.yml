@@ -38,18 +38,17 @@ services:
     networks:
       - kyb-network
 
-#  sanctions-service:
-#    build:
-#      context: ./sanctions-service
-#    container_name: sanctions-service
-#    restart: unless-stopped
-#    ports:
-#      - "8000:8000"
-#    networks:
-#      - kyb-network
-#    depends_on:
-#      - mongo
-    # UWAGA: Ten serwis dodamy później gdy sanctions-service będzie gotowy
+  kyc-service:
+    build:
+      context: ./kyc-service
+    container_name: kyc-service
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    networks:
+      - kyb-network
+    depends_on:
+      - mongo
 
 networks:
   kyb-network:

@@ -9,7 +9,7 @@ export function verifyToken(req, res, next) {
         return res.status(401).json({ error: 'Brak tokena autoryzacyjnego' });
     }
 
-    const token = authHeader.split(' ')[1];
+    const token = authHeader.split(' ')[1]; // "Bearer <token>"
     if(!token) {
         return res.status(401).json({ error: 'Nieprawidłowy format nagłówka Authorization' });
     }
