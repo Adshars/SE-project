@@ -1,23 +1,37 @@
 import json
 import os
 
-# Załaduj dane sankcyjne przy starcie serwisu
-DATA_FILE = "/app/data/entities.json"  # Ścieżka do danych sankcyjnych
-SANCTIONS_DATA = []
+# Scieka do danych
+DATA_FILE = os.path.join('data', 'Fixed', 'targets_fixed.json')
 
-if os.path.exists(DATA_FILE):
-    with open(DATA_FILE, "r", encoding="utf-8") as f:
-        SANCTIONS_DATA = json.load(f)
+#Zaladowanie danych z pliku JSON
+try:
+    with open(DATA_FILE, 'r', encoding='utf-8') as f:
+        DATA = json.load(f)
+except Exception as e:
+    print(f"❌ Blad ladowania danych z {DATA_FILE}: {e}")
+    DATA = []
 
-def check_person(name, dob=None):
-    for entity in SANCTIONS_DATA:
-        entity_name = entity.get("name", "").lower()
-        if name.lower() in entity_name:
-            if dob:
-                # Jeśli podano datę urodzenia, sprawdzaj także ją
-                entity_dob = entity.get("birthDate")
-                if entity_dob and dob in entity_dob:
-                    return entity
+def search_person(first_name: str, last_name: str, birth_date: str = None):
+    """
+    Szukaj osoby w danych sankcyjnych.
+    """
+    resoults = []
+
+    for entry in DATA:
+        props = entry.get('properties', {})
+        entry_first_names = props.get('firstName', [])
+        entry_last_names = props.get('lastName', [])
+        entry_birth_dates = props.get('birthDate', None)
+
+        # Sprawdz, czy imie i nazwisko pasuja
+        if (first_name in entry_first_names or first_name.lower in [n.lower() for n in entry_first_names]) and \
+            (last_name in entry_last_names or last_name.lower in [n.lower() for n in entry_last_names]):
+            # Sprawdz date urodzenia, jeśli podano
+            if birth_date:
+                if entry_birth_dates and birth_date in entry_birth_dates:
+                    resoults.append(entry)
             else:
-                return entity
-    return None
+                resoults.append(entry)
+
+        return resoults
