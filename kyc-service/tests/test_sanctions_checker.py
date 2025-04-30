@@ -1,5 +1,7 @@
+import sys
 import os
 import json
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import pytest
 from app.sanctions_checker import search_person
 
@@ -33,7 +35,7 @@ def test_found_with_birth_date():
     assert resoults[0]["properties"]["lastName"][0] == "ABEL"
 
 def test_found_without_birth_date():
-    resoults = search_person("Tetsiana", "ABEL")
+    resoults = search_person("Tatsiana", "ABEL")
     assert len(resoults) == 1
     assert resoults[0]["properties"]["lastName"][0] == "ABEL"
 
