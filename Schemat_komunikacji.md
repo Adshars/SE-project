@@ -15,7 +15,7 @@
 [ API Gateway ]
     ↓ (sprawdzenie tokena JWT lokalnie)
         ↓ (przekazanie danych osoby)
-[ OpenSanctions Service ]
+[ kyc-service ]
         ↑ (wynik sprawdzenia osoby)
 [ API Gateway ]
         ↑ (wynik sprawdzenia osoby)

@@ -52,8 +52,8 @@ Priorytet: 1
 Kategoria: Funkcjonalne
 
 Id: F5
-Nazwa: Weryfikacja osoby w OpenSanctions
-Opis: System odpyta serwis OpenSanctions i zwróci informację o wyniku wyszukiwania.
+Nazwa: Weryfikacja osoby w kyc-service
+Opis: System odpyta serwis kyc-service i zwróci informację o wyniku wyszukiwania. 
 Priorytet: 1
 Kategoria: Funkcjonalne
 
@@ -105,7 +105,7 @@ a. Architektura rozwoju – stos technologiczny (development stack)
 
 Nazwa: Node.js
 Przeznaczenie: Backend API Gateway, Auth Service, User/Organization Service
-Wersja: 20.x
+Wersja: 22.14.0
 
 Nazwa: Express.js
 Przeznaczenie: Framework HTTP dla mikroserwisów Node.js
@@ -113,7 +113,7 @@ Wersja: 4.x
 
 Nazwa: Python
 Przeznaczenie: Wrapper do OpenSanctions, mikroserwis weryfikacji
-Wersja: 3.11
+Wersja: 3.13.3
 
 Nazwa: FastAPI
 Przeznaczenie: Lekki framework do budowy REST API w Pythonie
@@ -149,17 +149,13 @@ Nazwa: Docker Compose
 Przeznaczenie: Orkiestracja i uruchamianie kontenerów w środowisku lokalnym
 Wersja: 2.x
 
-Nazwa: Nginx (opcjonalnie)
-Przeznaczenie: Reverse proxy dla API Gateway lub frontend
-Wersja: 1.25+
-
 Nazwa: Node.js
 Przeznaczenie: Uruchamianie backendowych mikroserwisów
-Wersja: 20.x
+Wersja: 22.14.0
 
 Nazwa: Python
 Przeznaczenie: Uruchamianie wrappera OpenSanctions
-Wersja: 3.11
+Wersja: 3.13.3
 
 Nazwa: MongoDB
 Przeznaczenie: Baza danych użytkowników i logów
@@ -202,7 +198,7 @@ Kroki:
 Oczekiwany rezultat: System przekazuje dane do mikroserwisu OpenSanctions.
 
 Test ID: T4
-Opis: Otrzymanie wyniku z mikroserwisu OpenSanctions
+Opis: Otrzymanie wyniku z mikroserwisu kyc-service
 Kroki:
   1. Wysłane zapytanie z danymi osoby.
   2. Mikroserwis odpytuje lokalną lub zdalną bazę opensanctions.
@@ -231,4 +227,4 @@ Kroki:
 Oczekiwany rezultat: Wynik jak dla użytkownika z aplikacji frontendowej.
 
 b. Sprawozdanie z wykonania scenariuszy testów
-Wszystkie scenariusze testowe zostały uruchomione w środowisku lokalnym z użyciem narzędzia Postman (dla backendu) oraz przeglądarki (dla frontendu). Testy T1–T4 oraz T6 zakończyły się pomyślnie. Scenariusze T5 i T7 wymagają jeszcze implementacji historii i publicznego API, które są planowane na kolejne etapy rozwoju projektu.
+Wszystkie scenariusze testowe zostały uruchomione w środowisku lokalnym z użyciem narzędzia Postman (dla backendu). Testy T1–T4 oraz T6 zakończyły się pomyślnie. Scenariusze T5 i T7 wymagają jeszcze implementacji historii i publicznego API, które są planowane na kolejne etapy rozwoju projektu.
