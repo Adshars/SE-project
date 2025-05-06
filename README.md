@@ -48,8 +48,7 @@ git clone https://github.com/opensanctions/opensanctions.git
 
 Wygeneruj lokalną bazę danych sankcyjnych:
 
-cd opensanctions
-docker compose run --rm app zavod crawl datasets/default
+cd opensanctions docker compose run --rm app zavod crawl datasets/default
 
 Skopiuj wygenerowane dane do katalogu sanctions-service/data/ Twojego projektu.
 
@@ -92,3 +91,4 @@ docker-compose.yml
 📝 Licencja
 
 Ten projekt objęty jest licencją MIT. Szczegóły w LICENSE.md.
+
