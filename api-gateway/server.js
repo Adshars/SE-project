@@ -4,6 +4,7 @@ import axios from 'axios';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { verifyToken } from './middleware/verifyToken.js';
 import authProxy from './routes/authProxy.js';
+import kycProxy from './routes/kycProxy.js';
 
 dotenv.config();
 const app = express();
@@ -11,6 +12,7 @@ app.use(express.json());
 
 // Obsługa logowania - proxy do Auth Service
 app.use('/', authProxy);
+app.use('/search', kycProxy);
 
 // Proxy do kyc-service z weryfikacją tokena
 

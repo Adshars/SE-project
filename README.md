@@ -91,3 +91,4 @@ docker-compose.yml
 📝 Licencja
 
 Ten projekt objęty jest licencją MIT. Szczegóły w LICENSE.md.
+
