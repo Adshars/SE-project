@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/fe803ec6-5abd-41e1-8e66-3ce468cca58c)SE-project
-
 🧾 Opis projektu
 
 SE-project to system oparty na mikroserwisach dla instytucji finansowych, który umożliwia automatyczne sprawdzanie kontrahentów lub klientów pod kątem występowania na listach sankcyjnych oraz PEP (Politically Exposed Persons). System zawiera funkcje uwierzytelniania, zarządzania organizacjami, zapytań KYC oraz integracji z OpenSanctions.
