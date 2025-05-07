@@ -1,4 +1,4 @@
-SE-project
+![image](https://github.com/user-attachments/assets/fe803ec6-5abd-41e1-8e66-3ce468cca58c)SE-project
 
 🧾 Opis projektu
 
@@ -15,6 +15,9 @@ api-gateway: Brama API przekierowująca żądania do odpowiednich mikroserwisów
 opensanctions-ms: Serwis do pobierania i utrzymywania danych z OpenSanctions.
 
 kyc-service: Zarządzanie zapytaniami KYC; obsługuje zapytania do danych pobranych przez opensanctions-ms.
+
+![image](https://github.com/user-attachments/assets/b3363436-2eb9-4609-923a-29d2f195a37f)
+
 
 🚀 Technologie i wersje
 
