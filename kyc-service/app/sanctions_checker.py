@@ -16,7 +16,7 @@ def search_person(first_name: str, last_name: str, birth_date: str = None):
     """
     Szukaj osoby w danych sankcyjnych.
     """
-    resoults = []
+    results = []
 
     for entry in DATA:
         props = entry.get('properties', {})
@@ -25,13 +25,13 @@ def search_person(first_name: str, last_name: str, birth_date: str = None):
         entry_birth_dates = props.get('birthDate', None)
 
         # Sprawdz, czy imie i nazwisko pasuja
-        if (first_name in entry_first_names or first_name.lower in [n.lower() for n in entry_first_names]) and \
-            (last_name in entry_last_names or last_name.lower in [n.lower() for n in entry_last_names]):
+        if (first_name in entry_first_names or first_name.lower() in [n.lower() for n in entry_first_names]) and \
+            (last_name in entry_last_names or last_name.lower() in [n.lower() for n in entry_last_names]):
             # Sprawdz date urodzenia, jeśli podano
             if birth_date:
                 if entry_birth_dates and birth_date in entry_birth_dates:
-                    resoults.append(entry)
+                    results.append(entry)
             else:
-                resoults.append(entry)
+                results.append(entry)
 
-        return resoults
+    return results
